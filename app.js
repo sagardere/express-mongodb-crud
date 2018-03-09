@@ -13,7 +13,7 @@ var app = express();
 mongoose.connect('mongodb://localhost/CRUD_APP');
 var db = mongoose.connection;
 
-//handle mongo error
+//handle mongodb error
 db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function () {

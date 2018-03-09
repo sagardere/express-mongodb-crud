@@ -1,8 +1,8 @@
+//Require all modules
 var mongoose = require('mongoose'),
     _ = require('lodash'),
     user = require('./user'),
     token = require('./token');
-
 
 
 var connections = {};

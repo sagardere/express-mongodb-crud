@@ -11,8 +11,8 @@
     "url": "git+https://github.com/sagardere/express-mongodb-crud.git"
   },
   "keywords": [
-    "Express",
-    "MongoDb",
+    "express",
+    "mongoDb",
     "CRUD",
     "API",
     "REST",
