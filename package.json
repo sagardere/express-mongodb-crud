@@ -2,7 +2,7 @@
   "name": "express-mongodb-crud",
   "version": "1.0.0",
   "description": "CRUD API using Express and MongoDb",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,17 @@
   "bugs": {
     "url": "https://github.com/sagardere/express-mongodb-crud/issues"
   },
-  "homepage": "https://github.com/sagardere/express-mongodb-crud#readme"
+  "homepage": "https://github.com/sagardere/express-mongodb-crud#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "email-validator": "^1.1.1",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.2.0",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0",
+    "password-hash": "^1.2.2",
+    "serve-favicon": "^2.4.5"
+  }
 }
