@@ -4,6 +4,9 @@ var router = express.Router();
 
 var userController = require('./user')();
 
+router.get('/home',function(req, res){
+	res.send("HOME..");
+});
 
 //user
 router.post('/registration',userController.registration);

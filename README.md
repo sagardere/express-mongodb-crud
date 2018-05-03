@@ -1,10 +1,13 @@
 # express-mongodb-crud
-CRUD API using Express and MongoDb
 
-# Install Packages
- 
- npm install
+	CRUD API using Express and MongoDb
 
-# Start Application
- 
- node bin/www 
+## How to use
+
+```
+$ cd express-mongodb-crud
+$ npm install
+$ npm start
+
+```
+
