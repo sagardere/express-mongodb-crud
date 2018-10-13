@@ -4,14 +4,14 @@ var router = express.Router();
 
 var userController = require('./user')();
 
-router.get('/home',function(req, res){
+router.get('/',function(req, res){
 	res.send("HOME..");
 });
 
 //user
 router.post('/registration',userController.registration);
 router.post('/login',userController.login);
-router.post('/setPassword',userController.setPassword);
+router.post('/forgot',userController.forgotPassword);
 router.post('/getUserInfo',userController.getUserInfo);
 router.post('/isAuthenticateToken',userController.isAuthenticateToken);
 router.post('/logout',userController.logout);

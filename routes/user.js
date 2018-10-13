@@ -95,30 +95,27 @@ module.exports = () => {
 
  // here this api call when user registration is complited after that
  // you can send mail to user for conformation.and after that to set the password.
- result.setPassword = (req, res) => {
+ result.forgotPassword = (req, res) => {
 
-    console.log(" Inside setPassword");
+    console.log(" Inside forgotPassword");
     console.log("Requested body: " ,req.body)
+    var bodyEmail = req.body.email;
+     if (validator.validate(bodyEmail) == false) {
 
-    if (req.body.id == undefined || req.body.id == "") {
+            res.json({success: false, message: "enter correct email format"})
 
-          res.json({success: false, message: "please send id"});
-
-      } else if(req.body.password == undefined || req.body.password == ""){
+    } else if(req.body.password == undefined || req.body.password == ""){
 
           res.json({success: false, message: "please send Password"})
 
       } else {
 
-          User.findOne({ "_id": req.body.id }, (err, userInfo) => {
-
-              //console.log(userInfo);
-              //console.log(err);
+          User.findOne({ "email": bodyEmail }, (err, userInfo) => {
               if (userInfo) {
 
                     var password = passwordHash.generate(req.body.password);
 
-                    User.update({ "_id": req.body.id }, { $set: { password: password } }, (err, updatePassword) => {
+                    User.update({ "email": bodyEmail }, { $set: { password: password } }, (err, updatePassword) => {
 
                         //console.log(updatePassword)
                        if(updatePassword){
