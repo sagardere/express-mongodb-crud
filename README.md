@@ -1,6 +1,4 @@
-# express-mongodb-crud
-
-	CRUD API using Express and MongoDb
+# Restful CRUD API with Node.js MongoDB and Express.js
 
 ## How to use
 
