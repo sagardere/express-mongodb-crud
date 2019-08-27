@@ -13,8 +13,6 @@ router.post('/registration',userController.registration);
 router.post('/login',userController.login);
 router.post('/forgot',userController.forgotPassword);
 router.post('/getUserInfo',userController.getUserInfo);
-router.post('/isAuthenticateToken',userController.isAuthenticateToken);
-router.post('/logout',userController.logout);
 router.put('/editUser',userController.editUser);
 router.delete('/deleteUser',userController.deleteUser);
 

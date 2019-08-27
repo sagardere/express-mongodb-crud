@@ -8,7 +8,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
 
-
 //connect to MongoDB
 mongoose.connect('mongodb://localhost/CRUD_APP');
 var db = mongoose.connection;
@@ -16,16 +15,13 @@ var db = mongoose.connection;
 //handle mongodb error
 db.on('error', console.error.bind(console, 'connection error:'));
 
-db.once('open', function () {
+db.once('open', function() {
 
   console.log("Connected to DataBase...");
 });
 
-
-
 //reqire routes folder
 var index = require('./routes/index');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,9 +29,12 @@ app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 
 app.set('trust proxy', 1) // trust first proxy
@@ -44,7 +43,6 @@ app.use(cookieSession({
   name: 'session',
   keys: ['abc', 'xyz']
 }))
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
